@@ -22,8 +22,13 @@ router.get('/new', function(req, res, next) {
 
 //post new article
 router.post('/new', function(req, res, next) {
-  
-  res.redirect('/shiz/show');
+  articleCollection.insert({
+    name: req.body.article_title,
+    url: req.body.article_url,
+    excerpt: req.body.article_excerpt,
+    body: req.body.article_body
+    });
+  res.redirect('/show');
 });
 
 module.exports = router;

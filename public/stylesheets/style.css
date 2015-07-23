@@ -1,6 +1,8 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url("../images/congruent_outline.png") repeat;
+
 }
 
 a {
@@ -12,6 +14,28 @@ div {
 }
 
 
+#header {
+
+    height:100px;
+    background: url("https://unsplash.imgix.net/photo-1429198739803-7db875882052?dpr=2&fit=crop&fm=jpg&h=1575&q=75&w=1050") repeat;
+    border:1px solid #CCC;
+    width:90%;
+    margin:0px auto;
+
+}
+
+#top {
+  float: right;
+  font-size: 33px;
+  font-weight: bold;
+}
+
+#inline {
+  border:1px solid #CCC;
+  background-color: white;
+  width:90%;
+  margin:0px auto;
+}
 
 label{
     display: inline-block;

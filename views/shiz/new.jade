@@ -1,30 +1,37 @@
 extends ../layout
 
 block content
-  h1= title
-  
-  hr 
-  
   br
-  fieldset
-    form(action="/new", method="post")
-      div
-        Title
-        label Title
-        input#small(type="text" name="article_title") 
-      div
-        Background 
-        label Background URL
-        input#small(type="text" name="article_url") 
-      div
-        Excerpt 
-        label Excerpt
-        input#big(type="text" name="article_excerpt") 
-      
-      div
-        Body 
-        label Body
-        input#big(type="text" name="article_body") 
-      div
-        input#button(type="submit", value="Add Article") 
+  br
+  #inline
+    h1= title
+    
+    hr 
+    
+    br
+    fieldset
+      form(action="/new", method="post")
+        div
+          Title
+          label Title
+          input#small(type="text" name="article_title") 
+        div
+          Background 
+          label Background URL
+          input#small(type="text" name="article_url") 
+        div
+          Colors 
+          label Does background image have dark colors?
+          input#big(type="checkbox" name="article_colors" value="checked") 
+        div
+          Excerpt 
+          label Excerpt
+          input#big(type="text" name="article_excerpt") 
+        
+        div
+          Body 
+          label Body
+          input#big(type="text" name="article_body") 
+        div
+          input#button(type="submit", value="Add Article") 
     
