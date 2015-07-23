@@ -3,26 +3,26 @@ extends ../layout
 block content
   br
   br
-  for article in allArticles
-    #inline
-      table
-        thead(style='background-image: url(' + article.url  +');')
-            tr
-            if article.colors === "checked"
-              th 
-                a(href="/more/" + article._id, style='color: white')= article.name
-            else 
-              th
-                a(href="/more/" + article._id, style='color: black')= article.name
+  #inline
+    each article in allArticles
+        table
+            thead(style='background-image: url(' + article.url  +');')
+                tr
+                if article.colors === "checked"
+                  th 
+                    a(href="/more/" + article._id, style='color: white')= article.name
+                else 
+                  th
+                    a(href="/more/" + article._id, style='color: black')= article.name
 
-        tbody
-            tr
-              td= article.excerpt
+            tbody
+                tr
+                  td= article.excerpt
+                  hr
+                
               
-            
               
-              
-              
+                        
   
 
   #inline
