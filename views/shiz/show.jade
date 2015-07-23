@@ -3,9 +3,23 @@ extends ../layout
 block content
   br
   br
+  for article in allArticles
+    #inline
+      table
+        thead(style='background-image: url(' + article.url  +');')
+            tr
+            if article.colors === "checked"
+              th(style='color: white')= article.name
+            else 
+              th= article.name
+        tbody
+            tr
+              td= article.excerpt
+              
+  
+
   #inline
     h1= title
     p Welcome to #{title}
-    
+
     a(href="/new") Create New Article
-  

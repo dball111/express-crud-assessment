@@ -37,6 +37,19 @@ div {
   margin:0px auto;
 }
 
+th {
+  float: left;
+}
+
+table {
+  padding: 10px;
+}
+
+thead {
+  height: 100%;
+  width: 100%;
+}
+
 label{
     display: inline-block;
     float: left;

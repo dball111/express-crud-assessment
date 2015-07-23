@@ -12,7 +12,9 @@ router.get('/', function(req, res, next) {
 
 //Show Page
 router.get('/show', function(req, res, next) {
-  res.render('shiz/show', {title: "Showwww me"});
+  articleCollection.find({}, function (err, records) {
+  res.render('shiz/show', {title: "Showwww me", allArticles: records});
+});
 });
 
 //New article page
@@ -26,9 +28,14 @@ router.post('/new', function(req, res, next) {
     name: req.body.article_title,
     url: req.body.article_url,
     excerpt: req.body.article_excerpt,
+    colors: req.body.article_colors,
     body: req.body.article_body
     });
   res.redirect('/show');
 });
+
+
+
+
 
 module.exports = router;
