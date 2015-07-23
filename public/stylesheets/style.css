@@ -49,6 +49,10 @@ th {
   font-size: 35px;
 }
 
+th#top {
+  float: right;
+}
+
 table {
   padding: 10px;
 }
@@ -80,4 +84,8 @@ input#small {
 
 input#button {
   clear: both;
+}
+
+input#delete {
+  background-color: red;
 }

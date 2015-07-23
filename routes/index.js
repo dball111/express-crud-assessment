@@ -38,33 +38,39 @@ router.post('/new', function(req, res, next) {
 
 
 //show complete article
-router.get('/:id', function(req, res, next) {
+router.get('/more/:id', function(req, res, next) {
   articleCollection.findOne({_id: req.params.id}, function (err, record) {
   res.render('shiz/more', {theArticle: record});
 });
 });
 
 
-// //Update article
-// router.get('/albums/:id/update', function(req, res, next) {
-//   albumCollection.findOne({_id: req.params.id}, function (err, record) {
-//     res.render('albums/edit', {theAlbum: record});
-//   });
-// });
-//
-//
-// //Update
-// router.post('/albums/:id/update', function(req, res, next){
-//   albumCollection.update({_id: req.params.id}, { $set: {"name": req.body.new_album, "artist" : req.body.new_artist, "genre": req.body.new_genre, "stars" : req.body.optionsRadios, "lyrics" : req.body.lyrics}})
-//   res.redirect('/albums');
-// });
-//
-//
-// //Delete
-// router.post('/albums/:id', function(req, res, next){
-//   albumCollection.remove({_id: req.params.id})
-//   res.redirect('/albums');
-// });
+//Update article
+router.get('/more/:id/update', function(req, res, next) {
+  articleCollection.findOne({_id: req.params.id}, function (err, record) {
+    res.render('shiz/edit', {theArticle: record});
+  });
+});
+
+
+//Update
+router.post('/more/:id/update', function(req, res, next){
+  articleCollection.update({_id: req.params.id}, { $set:
+    {  "name": req.body.article_title,
+      "url": req.body.article_url,
+      "excerpt": req.body.article_excerpt,
+      "colors": req.body.article_colors,
+      "body": req.body.article_body
+    }})
+  res.redirect('/show');
+});
+
+
+//Delete
+router.post('/more/:id', function(req, res, next){
+  articleCollection.remove({_id: req.params.id})
+  res.redirect('/show');
+});
 
 
 

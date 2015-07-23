@@ -10,10 +10,10 @@ block content
             tr
             if article.colors === "checked"
               th 
-                a(href="/more", style='color: white')= article.name
+                a(href="/more/" + article._id, style='color: white')= article.name
             else 
               th
-                a(href="/more", style='color: black')= article.name
+                a(href="/more/" + article._id, style='color: black')= article.name
 
         tbody
             tr

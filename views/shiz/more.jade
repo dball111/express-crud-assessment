@@ -1,6 +1,33 @@
 extends ../layout
 
 block content
+  br
   #inline
-    for article in theArticle 
-      h1= theArticle
+      table
+        thead(style='background-image: url(' + theArticle.url  +');')
+            tr
+            if theArticle.colors === "checked"
+              th 
+                a(href="/more/" + theArticle._id, style='color: white')= theArticle.name
+              th#top
+                a(href="/more/" + theArticle._id + "/update", style='color: white') Edit
+            else 
+              th
+                a(href="/more/" + theArticle._id, style='color: black')= theArticle.name
+              th#top
+                a(href="/more/" + theArticle._id + "/update", style='color: black') Edit
+
+
+        tbody
+            tr
+              td= theArticle.body
+
+
+
+
+
+
+          //-   input#button(type="submit", value="Update") 
+          //- br
+          //- form(action="/delete", method="post")
+          //-   input#button(type="submit", value="Delete") 
