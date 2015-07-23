@@ -6,7 +6,14 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+}
+
+a#zine {
+  color: black;
+  font-style: normal;
+  text-decoration: none;
+
 }
 
 div {
@@ -65,7 +72,6 @@ input {
 
 input#big {
   width: 400px;
-  height: 100px;
 }
 
 input#small {

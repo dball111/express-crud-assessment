@@ -9,12 +9,17 @@ block content
         thead(style='background-image: url(' + article.url  +');')
             tr
             if article.colors === "checked"
-              th(style='color: white')= article.name
+              th 
+                a(href="/more", style='color: white')= article.name
             else 
-              th= article.name
+              th
+                a(href="/more", style='color: black')= article.name
+
         tbody
             tr
               td= article.excerpt
+              
+            
               
               
               

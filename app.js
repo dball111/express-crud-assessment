@@ -14,6 +14,8 @@ var users = require('./routes/users');
 var show = require('./routes/show');
 
 var newOne = require('./routes/new');
+var more = require('./routes/more');
+
 
 
 
@@ -36,7 +38,10 @@ app.use('/users', users);
 
 app.use('/show', show);
 
-app.use('/new', newOne)
+app.use('/new', newOne);
+
+app.use('/more', more);
+
 
 
 // catch 404 and forward to error handler
