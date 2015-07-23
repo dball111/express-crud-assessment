@@ -4,6 +4,8 @@ var router = express.Router();
 var db = require('monk')(process.env.MONGOLAB_URI || 'localhost/article-db');
 var articleCollection = db.get('article');
 
+
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Assess This!' });
